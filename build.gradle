@@ -3,8 +3,11 @@
 buildscript {
     
     repositories {
+        maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        jcenter(){url 'http://jcenter.bintray.com/'}
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
@@ -17,11 +20,25 @@ buildscript {
 
 allprojects {
     repositories {
+        maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        jcenter(){url 'http://jcenter.bintray.com/'}
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+
+ext {
+    minSdkVersion = 19
+    targetSdkVersion = 27
+    compileSdkVersion = 27
+    supportLibraryVersion = '27.1.1'
+    constraint = '1.0.2'
+    versionCode = 1
+    versionName = "1.0"
 }
