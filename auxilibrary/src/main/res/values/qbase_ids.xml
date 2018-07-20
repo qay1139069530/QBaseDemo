@@ -1,0 +1,11 @@
+<resources>
+
+    <!--empty view-->
+    <item name="view_emptystub" type="id" />
+    <!--error view-->
+    <item name="view_errorstub" type="id" />
+    <!--ic_load view-->
+    <item name="view_loadstub" type="id" />
+
+
+</resources>

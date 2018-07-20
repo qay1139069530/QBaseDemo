@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <array name="pv_circular_in_colors">
+        <item>@style/LightInColorCircularProgressView</item>
+        <item>@style/DarkInColorCircularProgressView</item>
+    </array>
+
+    <!--<style name="StyledDialog" parent="@android:style/Theme.Dialog">-->
+        <!--<item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>-->
+        <!--<item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>-->
+        <!--<item name="android:windowFrame">@null</item>-->
+        <!--<item name="android:windowIsFloating">true</item>-->
+        <!--<item name="android:windowIsTranslucent">false</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:windowBackground">@color/translate</item>-->
+        <!--<item name="android:backgroundDimEnabled">true</item>-->
+        <!--<item name="android:backgroundDimAmount">0.3</item>-->
+        <!--<item name="android:paddingLeft">@dimen/action_size</item>-->
+        <!--<item name="android:paddingRight">@dimen/action_size</item>-->
+    <!--</style>-->
+    <style name="Theme_Transparent" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

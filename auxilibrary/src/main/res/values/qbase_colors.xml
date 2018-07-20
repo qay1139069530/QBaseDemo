@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2365FE</color>
+    <color name="colorPrimaryDark">#164cc4</color>
+    <!-- edit text 输入光标颜色 -->
+    <color name="colorAccent">@color/colorPrimary</color>
+    <color name="colorControlNormal">@color/colorPrimary</color>
+    <color name="colorControlActivated">@color/colorPrimary</color>
+    <color name="colorSwitchThumbNormal">@color/colorPrimary</color>
+    <color name="windowBackground">#EBEBEB</color>
+    <color name="navigationBarColor">#000000</color>
+
+    <!-- 附件蓝 -->
+    <color name="statusBar">@color/colorPrimary</color>
+    <color name="menu_bg">@color/colorPrimary</color>
+
+
+    <color name="checkbox">@color/colorPrimary</color>
+
+    <color name="tab_selected">@color/colorPrimary</color>
+    <color name="tabIndicatorColor">@color/colorPrimary</color>
+
+    <!-- empty ic_load error -->
+    <color name="load_text">@color/colorPrimary</color>
+    <color name="load_pb">@color/colorPrimary</color>
+    <color name="error_text">@color/colorPrimary</color>
+    <color name="empty_text">@color/colorPrimary</color>
+
+
+    <!-- 分割灰色 -->
+    <color name="line_dark">#DDDDDD</color>
+    <color name="line">#FFFFFF</color>
+    <color name="line_menu_color">#FF808080</color>
+
+
+
+    <color name="bg_progress">#222222</color>
+
+    <color name="bg_white_gray">#D9D9D9</color>
+    <color name="bg_dialog">#FFFFFFFF</color>
+    <color name="bg_guide_nor">#0071DB</color>
+    <color name="bg_guide_pre">#CC0071DB</color>
+
+    <color name="bg_login_nor">@color/colorPrimary</color>
+    <color name="bg_login_nor_bm">@color/colorPrimary</color>
+    <color name="bg_login_pre">@color/colorPrimaryDark</color>
+    <color name="bg_login_pre_bm">@color/colorPrimaryDark</color>
+
+    <color name="btn_reject_nor">#FFF2AF3A</color>
+    <color name="btn_reject_nor_bm">#FFF2AF3A</color>
+    <color name="btn_reject_pre">#fff27512</color>
+    <color name="btn_reject_pre_bm">#fff27512</color>
+
+
+    <color name="alpha_primary">#aaD9D9D9</color>
+
+    <color name="alpha_all">#00000000</color>
+    <!-- 半透明 -->
+    <color name="alpha_half">#e0000000</color>
+    <!-- 三分之二透明度 -->
+    <color name="alpha_twothird">#aa000000</color>
+    <!-- 0.6透明度 -->
+    <color name="alpha_six">#f3000000</color>
+    <!-- 三分之一透明度 -->
+    <color name="alpha_onethird">#55000000</color>
+
+
+</resources>
