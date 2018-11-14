@@ -16,24 +16,27 @@ import com.qbase.auxilibrary.common.CommonHandler;
 import com.qbase.auxilibrary.common.IHandlerListener;
 import com.qbase.auxilibrary.common.IQBaseCustomListener;
 import com.qbase.auxilibrary.common.IQBaseViewClickListener;
+import com.qbase.auxilibrary.common.struct.FunctionManager;
 import com.qbase.auxilibrary.util.ActivityStack;
 import com.qbase.auxilibrary.util.UIManager;
 import com.qbase.auxilibrary.util.permission.PermissionGrant;
 import com.qbase.auxilibrary.util.permission.PermissionUtil;
 
 
-public abstract class QBaseFg extends android.support.v4.app.Fragment implements IHandlerListener, PermissionGrant, IQBaseViewClickListener, IQBaseView,IQBaseCustomListener {
+public abstract class QBaseFg extends android.support.v4.app.Fragment implements IHandlerListener, PermissionGrant, IQBaseViewClickListener, IQBaseView, IQBaseCustomListener {
 
     protected final String TAG = this.getClass().getSimpleName();
 
     protected QBaseApp mApp;
 
     protected View mView;
+
+    protected FunctionManager mFunctionManager;
+
     /**
      * base handler
      */
     protected CommonHandler mHandler = new CommonHandler(this);
-
 
     public QBaseFg() {
     }
@@ -42,7 +45,12 @@ public abstract class QBaseFg extends android.support.v4.app.Fragment implements
     public void onAttach(Context context) {
         super.onAttach(context);
         mApp = (QBaseApp) (context.getApplicationContext());
+        if (context instanceof QBaseAct) {
+            QBaseAct qBaseAct = (QBaseAct) context;
+            qBaseAct.setFunctionManager(getTag());
+        }
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +62,21 @@ public abstract class QBaseFg extends android.support.v4.app.Fragment implements
         initView();
         initialize();
     }
-    /**初始化*/
+
+    /**
+     * 初始化
+     */
     protected abstract void initView();
-    /**初始化*/
+
+    /**
+     * 初始化
+     */
     protected abstract void initialize();
+
+
+    public void setFunctionManager(FunctionManager mFunctionManager) {
+        this.mFunctionManager = mFunctionManager;
+    }
 
     @Override
     public void onStart() {
@@ -180,7 +199,6 @@ public abstract class QBaseFg extends android.support.v4.app.Fragment implements
             Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
     /**
@@ -307,6 +325,7 @@ public abstract class QBaseFg extends android.support.v4.app.Fragment implements
     public void afterRequestSuccess() {
 
     }
+
     /**
      * 空提示框点击事件
      */

@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.qbase.auxilibrary.util.CollectionUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,12 @@ public class CommonPagerAdapter<T extends Fragment> extends FragmentPagerAdapter
 
     public void add(T fm) {
         mFragments.add(fm);
+    }
+
+    public void clear() {
+        if (!CollectionUtil.isEmpty(mFragments)) {
+            mFragments.clear();
+        }
     }
 
     @Override
@@ -33,4 +41,5 @@ public class CommonPagerAdapter<T extends Fragment> extends FragmentPagerAdapter
     public CharSequence getPageTitle(int position) {
         return super.getPageTitle(position);
     }
+
 }

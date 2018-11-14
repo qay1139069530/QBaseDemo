@@ -1,7 +1,5 @@
 package com.qbase.auxilibrary.util.inject;
 
-import android.content.Context;
-
 import com.qbase.auxilibrary.app.QBaseApp;
 import com.qbase.auxilibrary.util.inject.biz.QBaseInjector;
 import com.qbase.auxilibrary.util.inject.biz.QBaseInjectorImpl;
@@ -23,7 +21,7 @@ public final class QBaseInject {
                 // 在IDE进行布局预览时使用
                 Class<?> renderActionClass = Class.forName("com.android.layoutlib.bridge.impl.RenderAction");
                 Method method = renderActionClass.getDeclaredMethod("getCurrentContext");
-                Context context = (Context) method.invoke(null);
+                method.invoke(null);
                 Ext.app = new QBaseApp();
             } catch (Throwable ignored) {
                 throw new RuntimeException("please invoke QBaseInject.Ext.init(app) on Application#onCreate()"

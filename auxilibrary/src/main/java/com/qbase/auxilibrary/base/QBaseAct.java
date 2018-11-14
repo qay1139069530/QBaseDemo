@@ -152,6 +152,15 @@ public class QBaseAct extends AppCompatActivity implements IHandlerListener,
         }
     }
 
+
+    /**
+     * 设置fragment、view调用方法
+     */
+    public void setFunctionManager(String tag) {
+
+    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {

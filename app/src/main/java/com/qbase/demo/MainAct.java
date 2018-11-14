@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.qbase.demo.fragment.FragmentAct;
 import com.qbase.rxjava.RxJavaAct;
 import com.qbase.test.TestAct;
 
@@ -19,7 +20,8 @@ public class MainAct extends ListActivity {
     private final MainItemBean[] demos = {
             //显示Item
             new MainItemBean(R.string.RxJava, RxJavaAct.class),
-            new MainItemBean(R.string.Test, TestAct.class)
+            new MainItemBean(R.string.Test, TestAct.class),
+            new MainItemBean(R.string.fragment, FragmentAct.class)
     };
 
     @Override
