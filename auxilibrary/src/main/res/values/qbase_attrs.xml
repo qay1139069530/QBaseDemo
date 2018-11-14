@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="ThemableView">
-        <attr name="v_styleId" format="reference"/>
-    </declare-styleable>
-
-    <declare-styleable name="ProgressView">
-        <attr name="pv_autostart" format="boolean"/>
-        <attr name="pv_circular" format="boolean"/>
-        <attr name="pv_progressStyle" format="reference"/>
-        <attr name="pv_progressMode"/>
-        <attr name="pv_progress" />
-        <attr name="pv_secondaryProgress" />
-    </declare-styleable>
-
     <declare-styleable name="TextProgressBar">
         <!--max:进度条最大值-->
         <attr name="max" format="integer" />
         <!--progress:当前的进制值-->
         <attr name="progress" format="integer" />
         <!--progress_barHeight:进度条高度,并不含文字的高度  -->
-        <attr name="progress_barHeight" />
+        <attr name="progress_barHeight" format="dimension"/>
         <!--backgroundColor:进度条的背景颜色 -->
         <attr name="backgroundColor" format="color" />
         <!--progressColor:显示当前进度的颜色 -->

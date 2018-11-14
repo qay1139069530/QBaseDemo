@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    <array name="pv_circular_in_colors">
-        <item>@style/LightInColorCircularProgressView</item>
-        <item>@style/DarkInColorCircularProgressView</item>
-    </array>
 
     <!--<style name="StyledDialog" parent="@android:style/Theme.Dialog">-->
         <!--<item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>-->

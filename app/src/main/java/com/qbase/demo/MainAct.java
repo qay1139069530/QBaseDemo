@@ -11,12 +11,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-public class MainAct extends ListActivity {
+import com.qbase.rxjava.RxJavaAct;
+import com.qbase.test.TestAct;
 
+public class MainAct extends ListActivity {
 
     private final MainItemBean[] demos = {
             //显示Item
-            new MainItemBean(R.string.title, MainAct.class),
+            new MainItemBean(R.string.RxJava, RxJavaAct.class),
+            new MainItemBean(R.string.Test, TestAct.class)
     };
 
     @Override

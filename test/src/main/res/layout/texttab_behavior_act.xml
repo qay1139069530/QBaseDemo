@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title_behavior_act_title"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/Amber"
+        android:gravity="center"
+        android:text="Hello World"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        app:layout_behavior="@string/behavior_tab_text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/colorPrimary"
+        app:layout_behavior="@string/behavior_tab_title">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@null"
+            android:padding="3dp"
+            android:src="@mipmap/ic_launcher" />
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/texttab_behavior_act_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:background="@color/White"
+        app:layout_behavior="@string/behavior_tab"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@color/Black" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/texttab_behavior_act_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/behavior_tab_content" />
+
+</android.support.design.widget.CoordinatorLayout>
+

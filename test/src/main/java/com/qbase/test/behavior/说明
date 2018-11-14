@@ -1,0 +1,49 @@
+使用CoordinatorLayout时，会在xml文件中用它作为根布局，并给相应的子View添加一个类似
+app:layout_behavior="@string/appbar_scrolling_view_behavior"的属性，当然属性值也可以是其它的。
+进一步可以发现@string/appbar_scrolling_view_behavior的值是android.support.design.widget.AppBarLayout$ScrollingViewBehavior，
+不就是support包下一个类的路径嘛！玄机就在这里，通过CoordinatorLayout之所以可以实现炫酷的交互效果，Behavior功不可没。
+既然如此，我们也可以自定义Behavior，来定制我们想要的效果。
+
+要自定义Behavior，首先认识下它：
+public static abstract class Behavior<V extends View> {
+
+        /**
+         * Default constructor for instantiating Behaviors.
+         */
+        public Behavior() {
+        }
+
+        /**
+         * Default constructor for inflating Behaviors from layout. The Behavior will have
+         * the opportunity to parse specially defined layout parameters. These parameters will
+         * appear on the child view tag.
+         *
+         * @param context
+         * @param attrs
+         */
+        public Behavior(Context context, AttributeSet attrs) {
+        }
+
+        .....
+
+}
+
+其中有一个泛型，它的作用是指定要使用这个Behavior的View的类型，可以是Button、TextView等等。
+如果希望所有的View都可以使用则指定泛型为View即可。
+
+自定义Behavior可以选择重写以下的几个方法有：
+
+onInterceptTouchEvent()：是否拦截触摸事件
+onTouchEvent()：处理触摸事件
+layoutDependsOn()：确定使用Behavior的View要依赖的View的类型
+onDependentViewChanged()：当被依赖的View状态改变时回调
+onDependentViewRemoved()：当被依赖的View移除时回调
+onMeasureChild()：测量使用Behavior的View尺寸
+onLayoutChild()：确定使用Behavior的View位置
+onStartNestedScroll()：嵌套滑动开始（ACTION_DOWN），确定Behavior是否要监听此次事件
+onStopNestedScroll()：嵌套滑动结束（ACTION_UP或ACTION_CANCEL）
+onNestedScroll()：嵌套滑动进行中，要监听的子 View的滑动事件已经被消费
+onNestedPreScroll()：嵌套滑动进行中，要监听的子 View将要滑动，滑动事件即将被消费（但最终被谁消费，可以通过代码控制）
+onNestedFling()：要监听的子 View在快速滑动中
+onNestedPreFling()：要监听的子View即将快速滑动
+

@@ -1,11 +1,16 @@
 <resources>
 
     <!--empty view-->
-    <item name="view_emptystub" type="id" />
+    <item name="qbase_view_emptystub" type="id" />
     <!--error view-->
-    <item name="view_errorstub" type="id" />
-    <!--ic_load view-->
-    <item name="view_loadstub" type="id" />
+    <item name="qbase_view_errorstub" type="id" />
+    <!--load view-->
+    <item name="qbase_view_loadstub" type="id" />
 
+    <!--title view-->
+    <item name="qbase_title_viewstub" type="id"/>
+    <item name="qbase_title_coordinatorLayout" type="id"/>
+    <item name="qbase_title_toolbar" type="id"/>
+    <item name="qbase_title_toolbar_title" type="id"/>
 
 </resources>

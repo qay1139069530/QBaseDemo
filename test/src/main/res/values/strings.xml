@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Test</string>
+
+
+    <string name="item_behavior_title">behavior_title</string>
+    <string name="behavior_title">com.qbase.test.behavior.custom.TitleBehavior</string>
+
+
+    <string name="item_behavior_title_recycler">behavior_title_recycler</string>
+    <string name="behavior_titletext">com.qbase.test.behavior.custom.TitleTextBehavior</string>
+    <string name="behavior_recycler">com.qbase.test.behavior.custom.RecyclerBehavior</string>
+
+    <string name="item_behavior_text_tab_recycler">behavior_title_text_tab</string>
+    <string name="behavior_tab_title">com.qbase.test.behavior.custom.TabTitleBehavior</string>
+    <string name="behavior_tab">com.qbase.test.behavior.custom.TabBehavior</string>
+    <string name="behavior_tab_content">com.qbase.test.behavior.custom.TabContentBehavior</string>
+    <string name="behavior_tab_text">com.qbase.test.behavior.custom.TabTextBehavior</string>
+</resources>

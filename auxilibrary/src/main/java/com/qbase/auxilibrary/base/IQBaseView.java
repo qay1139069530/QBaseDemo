@@ -9,4 +9,9 @@ public interface IQBaseView {
      */
     void afterRequestError(String text);
 
+    /**
+     * 加载才成功调用
+     */
+    void afterRequestSuccess();
+
 }

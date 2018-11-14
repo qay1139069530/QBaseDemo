@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@mipmap/add_nor"
+        android:orderInCategory="100"
+        android:title=""
+        app:showAsAction="ifRoom|withText">
+        <menu>
+
+            <group android:id="@+id/rxj_add_group">
+                <item
+                    android:id="@+id/rxj_add_create"
+                    android:title="创建"
+                    app:showAsAction="never" />
+
+                <item
+                    android:id="@+id/rxj_add_thread"
+                    android:title="线程调度"
+                    app:showAsAction="never" />
+
+                <item
+                    android:id="@+id/rxj_add_map"
+                    android:title="操作符Map"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rxj_add_contact"
+                    android:title="操作符Contact"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rxj_add_flatmap"
+                    android:title="操作符FlatMap"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rxj_add_zip"
+                    android:title="操作符ZIP"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rxj_add_interval"
+                    android:title="操作符Interval"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rxj_add_other"
+                    android:title="操作符Other"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

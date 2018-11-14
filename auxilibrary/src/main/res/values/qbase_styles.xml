@@ -1,44 +1,71 @@
 <resources>
-    <style name="QBaseTheme" parent="Theme.AppCompat">
-    </style>
 
-
-    <!-- Base application theme. -->
-    <style name="MyAppTheme" parent="QBaseTheme">
-        <item name="actionOverflowMenuStyle">@style/p_mennu</item>
-        <!--<item name="android:colorBackground">@color/d_colorBackground</item>&lt;!&ndash;内容背景颜色&ndash;&gt;-->
-        <!--<item name="android:buttonStyle">@style/MyButtonStyle</item>-->
+    <!--<style name="QBaseTheme" parent="Theme.AppCompat.Light">-->
+    <!--<item name="actionOverflowMenuStyle">@style/qbase_menu</item>-->
+    <!--&lt;!&ndash;<item name="android:colorBackground">@color/d_colorBackground</item>&lt;!&ndash;内容背景颜色&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="android:buttonStyle">@style/MyButtonStyle</item>&ndash;&gt;-->
+    <!--<item name="actionBarSize">@dimen/action_bar_size</item>-->
+    <!--<item name="android:windowTranslucentStatus">true</item>-->
+    <!--<item name="android:actionBarSize">@dimen/action_bar_size</item>-->
+    <!--<item name="colorControlActivated">@color/colorPrimary</item>-->
+    <!--<item name="android:textColorPrimary">@color/qbase_white</item>-->
+    <!--<item name="android:windowBackground">@color/windowBackground</item>-->
+    <!--</style>-->
+    <style name="QBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionOverflowMenuStyle">@style/qbase_menu</item>
+        <item name="actionBarPopupTheme">@style/qbase_menu_poptheme</item>
         <item name="actionBarSize">@dimen/action_bar_size</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:actionBarSize">@dimen/action_bar_size</item>
         <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/qbase_white</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <!--<item name="android:popupTheme">@style/qbase_menu_poptheme</item>-->
     </style>
 
-    <style name="inputTheme" parent="MyAppTheme">
-        <item name="colorControlActivated">@color/colorPrimary</item>
+    <!--<item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>-->
+
+    <style name="qbase_menu_poptheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/qbase_white</item>
+        <item name="android:dropDownItemStyle">@style/qbase_dropDownItemStyle</item>
+        <item name="android:autoCompleteTextViewStyle">@style/autoCompleteTextViewStyle</item>
+        <item name="android:gravity">center</item>
     </style>
 
-    <style name="p_mennu" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+    <style name="qbase_dropDownItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="autoCompleteTextViewStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="qbase_menu" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
         <!-- 是否覆盖锚点，默认为true，即盖住Toolbar -->
         <item name="overlapAnchor">false</item>
         <!-- 弹出层背景颜色 -->
-        <item name="android:popupBackground">@color/colorPrimary</item>
+        <item name="android:popupBackground">@color/qbase_menu_bg</item>
         <!-- 弹出层垂直方向上的偏移，即在竖直方向上距离Toolbar的距离，值为负则会盖住Toolbar -->
         <item name="android:dropDownVerticalOffset">0dp</item>
         <!-- 弹出层中字体颜色饿 -->
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/qbase_menu_text</item>
         <!-- 弹出层水平方向上的偏移，即距离屏幕左边的距离，负值会导致右边出现空隙 -->
         <item name="android:dropDownHorizontalOffset">0dp</item>
         <!-- 弹出层分割线 -->
         <item name="android:dropDownListViewStyle">@style/AppDropDownListViewStyle</item>
+
+    </style>
+
+    <style name="qbase_tooblestyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/qbase_white</item>
     </style>
 
     <style name="AppDropDownListViewStyle" parent="Widget.AppCompat.ListView.DropDown">
         <item name="android:showDividers">middle</item>
-        <item name="android:divider">@android:color/white</item>
+        <item name="android:divider">@color/qbase_menu_driver</item>
         <item name="android:dividerHeight">@dimen/line_height</item>
     </style>
-
 
     <style name="progressbar_red" parent="@android:style/Widget.ProgressBar.Horizontal">
         <item name="android:minHeight">10dip</item>
@@ -60,8 +87,6 @@
         <item name="android:progressDrawable">@drawable/pb_horizontal_blue</item>
     </style>
 
-
-
     <style name="empty_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -69,7 +94,7 @@
         <item name="android:background">@mipmap/bg_dashed_box</item>
         <item name="android:gravity">center</item>
         <item name="android:padding">10dp</item>
-        <item name="android:textColor">@color/error_text</item>
+        <item name="android:textColor">@color/qbase_error_text</item>
         <item name="android:textSize">16sp</item>
     </style>
 
@@ -80,12 +105,12 @@
         <item name="android:background">@mipmap/bg_dashed_box</item>
         <item name="android:gravity">center</item>
         <item name="android:padding">10dp</item>
-        <item name="android:textColor">@color/error_text</item>
+        <item name="android:textColor">@color/qbase_error_text</item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="progress_theme" parent="QBaseTheme">
-        <item name="colorControlActivated">@color/load_pb</item>
+        <item name="colorControlActivated">@color/qbase_load_pb</item>
     </style>
 
 
@@ -102,7 +127,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/load_text</item>
+        <item name="android:textColor">@color/qbase_load_text</item>
         <item name="android:textSize">18sp</item>
     </style>
 
@@ -119,11 +144,11 @@
     </style>
 
     <style name="CustomProgressDialog" parent="@style/CustomDialog">
-        <item name="android:windowBackground">@color/alpha_all</item>
+        <item name="android:windowBackground">@color/qbase_alpha_all</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="CardViewStyle">
+    <style name="card_view_style">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginRight">@dimen/card_margin</item>
         <item name="android:layout_marginLeft">@dimen/card_margin</item>
@@ -170,34 +195,6 @@
     </style>
 
 
-    <!--<style name="btn_normal">-->
-        <!--<item name="android:layout_width">match_parent</item>-->
-        <!--<item name="android:layout_height">wrap_content</item>-->
-        <!--<item name="android:gravity">center</item>-->
-        <!--<item name="android:background">@drawable/btn_normal</item>-->
-        <!--<item name="android:textColor">@color/white</item>-->
-        <!--<item name="android:textSize">@dimen/text_sixteen_sp</item>-->
-    <!--</style>-->
-
-    <!--<style name="btn_submit">-->
-        <!--<item name="android:layout_width">match_parent</item>-->
-        <!--<item name="android:layout_height">wrap_content</item>-->
-        <!--<item name="android:gravity">center</item>-->
-        <!--<item name="android:background">@drawable/btn_submit</item>-->
-        <!--<item name="android:textColor">@color/white</item>-->
-        <!--<item name="android:textSize">@dimen/text_sixteen_sp</item>-->
-    <!--</style>-->
-
-    <!--<style name="btn_reject">-->
-        <!--<item name="android:layout_width">match_parent</item>-->
-        <!--<item name="android:layout_height">wrap_content</item>-->
-        <!--<item name="android:gravity">center</item>-->
-        <!--<item name="android:background">@drawable/btn_reject</item>-->
-        <!--<item name="android:textColor">@color/white</item>-->
-        <!--<item name="android:textSize">@dimen/text_sixteen_sp</item>-->
-    <!--</style>-->
-
-
     <style name="img_more">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">fill_parent</item>
@@ -207,13 +204,19 @@
     </style>
 
 
-    <style name="ll_content">
+    <style name="ll_horizontal">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <style name="ll_vertical">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 
     <style name="line_horizontal">
         <item name="android:layout_width">match_parent</item>
@@ -221,17 +224,10 @@
         <item name="android:background">@color/line_dark</item>
     </style>
 
-
     <style name="line_vertical">
         <item name="android:layout_width">@dimen/line_height</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/line_dark</item>
-    </style>
-
-    <style name="line_login">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/line_height</item>
-        <item name="android:background">@android:color/white</item>
     </style>
 
     <style name="checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
@@ -249,86 +245,6 @@
         <item name="colorSwitchThumbNormal">@color/colorSwitchThumbNormal</item>
         <!--<item name="android:listChoiceIndicatorMultiple">@drawable/checkbox</item>-->
         <!--<item name="android:listDivider">@color/d_windowBackground</item>-->
-    </style>
-
-
-
-
-
-
-    <style name="Material" />
-    <style name="Material.Drawable" />
-    <style name="Material.Drawable.CircularProgress">
-        <item name="cpd_padding">0dp</item>
-        <item name="cpd_initialAngle">0</item>
-        <item name="cpd_maxSweepAngle">270</item>
-        <item name="cpd_minSweepAngle">1</item>
-        <item name="cpd_strokeSize">4dp</item>
-        <item name="cpd_strokeColor">?attr/colorPrimary</item>
-        <item name="cpd_strokeSecondaryColor">@android:color/transparent</item>
-        <item name="cpd_reverse">false</item>
-        <item name="cpd_rotateDuration">1000</item>
-        <item name="cpd_transformDuration">600</item>
-        <item name="cpd_keepDuration">200</item>
-        <item name="cpd_transformInterpolator">@android:anim/decelerate_interpolator</item>
-        <item name="pv_progressMode">indeterminate</item>
-        <item name="cpd_inAnimDuration">0</item>
-        <item name="cpd_outAnimDuration">@android:integer/config_mediumAnimTime</item>
-    </style>
-
-    <style name="LightCircularProgressDrawable" parent="Material.Drawable.CircularProgress">
-        <item name="cpd_strokeColor">@color/colorPrimary</item>
-    </style>
-
-    <style name="LightCircularProgressView">
-        <item name="pv_autostart">false</item>
-        <item name="pv_circular">true</item>
-        <item name="pv_progressStyle">@style/LightCircularProgressDrawable</item>
-        <item name="pv_progressMode">indeterminate</item>
-    </style>
-
-    <style name="LightInColorCircularProgressView" parent="LightCircularProgressView">
-        <item name="pv_progressStyle">@style/LightInColorCircularProgressDrawable</item>
-    </style>
-
-    <style name="LightInCircularProgressDrawable" parent="Material.Drawable.CircularProgress">
-        <item name="cpd_strokeColor">@color/colorPrimary</item>
-        <item name="cpd_inAnimDuration">800</item>
-        <item name="cpd_inStepPercent">0.5</item>
-        <item name="cpd_inStepColors">@array/base_in_colors_light</item>
-        <item name="cpd_outAnimDuration">400</item>
-    </style>
-
-    <style name="LightInColorCircularProgressDrawable" parent="LightInCircularProgressDrawable">
-        <item name="cpd_strokeColors">@array/base_progress_colors_light</item>
-    </style>
-
-
-    <style name="DarkCircularProgressDrawable" parent="Material.Drawable.CircularProgress">
-        <item name="cpd_strokeColor">@color/colorAccent</item>
-        <item name="cpd_reverse">true</item>
-    </style>
-
-    <style name="DarkInColorCircularProgressDrawable" parent="DarkInCircularProgressDrawable">
-        <item name="cpd_strokeColors">@array/base_progress_colors_dark</item>
-    </style>
-
-    <style name="DarkInCircularProgressDrawable" parent="DarkCircularProgressDrawable">
-        <item name="cpd_inAnimDuration">800</item>
-        <item name="cpd_inStepPercent">0.5</item>
-        <item name="cpd_inStepColors">@array/base_in_colors_dark</item>
-        <item name="cpd_outAnimDuration">400</item>
-    </style>
-
-    <style name="DarkCircularProgressView">
-        <item name="pv_autostart">false</item>
-        <item name="pv_circular">true</item>
-        <item name="pv_progressStyle">@style/DarkCircularProgressDrawable</item>
-        <item name="pv_progressMode">indeterminate</item>
-    </style>
-
-    <style name="DarkInColorCircularProgressView" parent="DarkCircularProgressView">
-        <item name="pv_progressStyle">@style/DarkInColorCircularProgressDrawable</item>
     </style>
 
 

@@ -21,7 +21,7 @@ public final class MainItemView extends FrameLayout {
     public synchronized void setTitleId(int titleId, boolean issub) {
         String title = this.getResources().getString(titleId);
         if (issub) {
-            ((TextView) (findViewById(R.id.title))).setText("         " + title);
+            ((TextView) (findViewById(R.id.title))).setText(" " + title);
         } else {
             ((TextView) (findViewById(R.id.title))).setText(title);
         }

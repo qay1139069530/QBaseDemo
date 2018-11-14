@@ -4,9 +4,6 @@
 
 
 
-
-
-
     <!-- permission -->
     <string name="permission_update">需要使用内存卡读写功能,以便检查升级功能？</string>
     <string name="setting_capture">连接摄像头失败，请确认是否有摄像头或者到系统设置中设置允许应用访问摄像头权限</string>

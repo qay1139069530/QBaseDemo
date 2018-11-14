@@ -1060,8 +1060,8 @@ public class MyTabLayout extends HorizontalScrollView {
 
         if (startScrollX != targetScrollX) {
             if (mScrollAnimator == null) {
-                mScrollAnimator = ViewUtil.createAnimator();
-                mScrollAnimator.setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
+                mScrollAnimator = TableViewUtil.createAnimator();
+                mScrollAnimator.setInterpolator(TableAnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
                 mScrollAnimator.setDuration(ANIMATION_DURATION);
                 mScrollAnimator.setUpdateListener(new ValueAnimatorCompat.AnimatorUpdateListener() {
                     @Override
@@ -1692,13 +1692,13 @@ public class MyTabLayout extends HorizontalScrollView {
                 // If there isn't a custom view, we'll us our own in-built layouts
                 if (mIconView == null) {
                     ImageView iconView = (ImageView) LayoutInflater.from(getContext())
-                            .inflate(R.layout.view_tablelayout_icon, this, false);
+                            .inflate(R.layout.qbase_tablelayout_icon, this, false);
                     addView(iconView, 0);
                     mIconView = iconView;
                 }
                 if (mTextView == null) {
                     TextView textView = (TextView) LayoutInflater.from(getContext())
-                            .inflate(R.layout.view_tablelayout_text, this, false);
+                            .inflate(R.layout.qbase_tablelayout_text, this, false);
                     addView(textView);
                     mTextView = textView;
                     mDefaultMaxLines = TextViewCompat.getMaxLines(mTextView);
@@ -2088,8 +2088,8 @@ public class MyTabLayout extends HorizontalScrollView {
             }
 
             if (startLeft != targetLeft || startRight != targetRight) {
-                ValueAnimatorCompat animator = mIndicatorAnimator = ViewUtil.createAnimator();
-                animator.setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
+                ValueAnimatorCompat animator = mIndicatorAnimator = TableViewUtil.createAnimator();
+                animator.setInterpolator(TableAnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
                 animator.setDuration(duration);
                 animator.setFloatValues(0, 1);
                 animator.setUpdateListener(new ValueAnimatorCompat.AnimatorUpdateListener() {
@@ -2097,8 +2097,8 @@ public class MyTabLayout extends HorizontalScrollView {
                     public void onAnimationUpdate(ValueAnimatorCompat animator) {
                         final float fraction = animator.getAnimatedFraction();
                         setIndicatorPosition(
-                                AnimationUtils.lerp(startLeft, targetLeft, fraction),
-                                AnimationUtils.lerp(startRight, targetRight, fraction));
+                                TableAnimationUtils.lerp(startLeft, targetLeft, fraction),
+                                TableAnimationUtils.lerp(startRight, targetRight, fraction));
                     }
                 });
                 animator.setListener(new ValueAnimatorCompat.AnimatorListenerAdapter() {

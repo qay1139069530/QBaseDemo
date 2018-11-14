@@ -34,6 +34,20 @@ public class QBasePresenter<T extends IQBaseView> implements IHandlerListener {
         }
     }
 
+    /**
+     * 显示弹出框
+     */
+    protected void afterRequestSuccess() {
+        if (mHandler != null && mView != null) {
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    //调用成功
+                    mView.afterRequestSuccess();
+                }
+            });
+        }
+    }
 
     /**
      * Persenter 生命周期 onDestroy

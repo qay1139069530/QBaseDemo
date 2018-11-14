@@ -2,5 +2,6 @@
     <string name="app_name">QBaseDemo</string>
 
 
-    <string name="title">QBaseDemo</string>
+    <string name="RxJava">RxJava2</string>
+    <string name="Test">Test</string>
 </resources>

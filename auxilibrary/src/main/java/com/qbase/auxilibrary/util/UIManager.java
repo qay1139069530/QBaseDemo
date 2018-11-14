@@ -70,16 +70,16 @@ public class UIManager {
     public View showEmptyView(@NonNull Activity activity, String msg, View.OnClickListener listener) {
         View error = null;
         if (activity != null) {
-            ViewStub errorStub = ((ViewStub) activity.findViewById(R.id.view_emptystub));
+            ViewStub errorStub = ((ViewStub) activity.findViewById(R.id.qbase_view_emptystub));
             if (errorStub != null) {
                 error = errorStub.inflate();
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_empty_content);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_empty_content);
                 mLlContent.setOnClickListener(listener);
-                TextView textView = (TextView) error.findViewById(R.id.view_empty_text);
+                TextView textView = (TextView) error.findViewById(R.id.qbase_empty_text);
                 textView.setText(msg);
             } else {
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_empty_content);
-                TextView textView = (TextView) activity.findViewById(R.id.view_empty_text);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_empty_content);
+                TextView textView = (TextView) activity.findViewById(R.id.qbase_empty_text);
                 if (textView != null) {
                     textView.setText(msg);
                     textView.setVisibility(View.VISIBLE);
@@ -136,16 +136,16 @@ public class UIManager {
     public View showEmptyView(@NonNull View view, String msg, View.OnClickListener listener) {
         View error = null;
         if (view != null) {
-            ViewStub errorStub = (ViewStub) view.findViewById(R.id.view_emptystub);
+            ViewStub errorStub = (ViewStub) view.findViewById(R.id.qbase_view_emptystub);
             if (errorStub != null) {
                 error = errorStub.inflate();
-                LinearLayout mLlContent = (LinearLayout) error.findViewById(R.id.view_empty_content);
+                LinearLayout mLlContent = (LinearLayout) error.findViewById(R.id.qbase_empty_content);
                 mLlContent.setOnClickListener(listener);
-                TextView textView = (TextView) error.findViewById(R.id.view_empty_text);
+                TextView textView = (TextView) error.findViewById(R.id.qbase_empty_text);
                 textView.setText(msg);
             } else {
-                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.view_empty_content);
-                TextView textView = (TextView) view.findViewById(R.id.view_empty_text);
+                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.qbase_empty_content);
+                TextView textView = (TextView) view.findViewById(R.id.qbase_empty_text);
                 if (textView != null) {
                     textView.setText(msg);
                     textView.setVisibility(View.VISIBLE);
@@ -168,12 +168,12 @@ public class UIManager {
     public View hideEmptyView(@NonNull Activity activity) {
         View error = null;
         if (activity != null) {
-            ViewStub errorStub = ((ViewStub) activity.findViewById(R.id.view_emptystub));
+            ViewStub errorStub = ((ViewStub) activity.findViewById(R.id.qbase_view_emptystub));
             if (errorStub != null) {
                 error = errorStub.inflate();
                 error.setVisibility(View.GONE);
             } else {
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_empty_content);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_empty_content);
                 if (mLlContent != null) {
                     mLlContent.setVisibility(View.GONE);
                     error = mLlContent;
@@ -192,12 +192,12 @@ public class UIManager {
     public View hideEmptyView(@NonNull View view) {
         View error = null;
         if (view != null) {
-            ViewStub errorStub = ((ViewStub) view.findViewById(R.id.view_emptystub));
+            ViewStub errorStub = ((ViewStub) view.findViewById(R.id.qbase_view_emptystub));
             if (errorStub != null) {
                 error = errorStub.inflate();
                 error.setVisibility(View.GONE);
             } else {
-                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.view_empty_content);
+                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.qbase_empty_content);
                 if (mLlContent != null) {
                     mLlContent.setVisibility(View.GONE);
                     error = mLlContent;
@@ -252,16 +252,16 @@ public class UIManager {
     public View showErrorView(@NonNull Activity activity, String msg, View.OnClickListener listener) {
         View error = null;
         if (activity != null) {
-            ViewStub errorStub = ((ViewStub) activity.findViewById(R.id.view_errorstub));
+            ViewStub errorStub = ((ViewStub) activity.findViewById(R.id.qbase_view_errorstub));
             if (errorStub != null) {
                 error = errorStub.inflate();
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_error_content);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_error_content);
                 mLlContent.setOnClickListener(listener);
-                TextView textView = (TextView) error.findViewById(R.id.view_error_text);
+                TextView textView = (TextView) error.findViewById(R.id.qbase_error_text);
                 textView.setText(msg);
             } else {
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_error_content);
-                TextView textView = (TextView) activity.findViewById(R.id.view_error_text);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_error_content);
+                TextView textView = (TextView) activity.findViewById(R.id.qbase_error_text);
                 if (textView != null) {
                     textView.setText(msg);
                     textView.setVisibility(View.VISIBLE);
@@ -318,16 +318,16 @@ public class UIManager {
     public View showErrorView(@NonNull View view, String msg, View.OnClickListener listener) {
         View error = null;
         if (view != null) {
-            ViewStub errorStub = (ViewStub) view.findViewById(R.id.view_errorstub);
+            ViewStub errorStub = (ViewStub) view.findViewById(R.id.qbase_view_errorstub);
             if (errorStub != null) {
                 error = errorStub.inflate();
-                LinearLayout mLlContent = (LinearLayout) error.findViewById(R.id.view_error_content);
+                LinearLayout mLlContent = (LinearLayout) error.findViewById(R.id.qbase_error_content);
                 mLlContent.setOnClickListener(listener);
-                TextView textView = (TextView) error.findViewById(R.id.view_error_text);
+                TextView textView = (TextView) error.findViewById(R.id.qbase_error_text);
                 textView.setText(msg);
             } else {
-                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.view_error_content);
-                TextView textView = (TextView) view.findViewById(R.id.view_error_text);
+                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.qbase_error_content);
+                TextView textView = (TextView) view.findViewById(R.id.qbase_error_text);
                 if (textView != null) {
                     textView.setText(msg);
                     textView.setVisibility(View.VISIBLE);
@@ -350,12 +350,12 @@ public class UIManager {
     public View hideErrorView(@NonNull Activity activity) {
         View error = null;
         if (activity != null) {
-            ViewStub errorStub = ((ViewStub) activity.findViewById(R.id.view_errorstub));
+            ViewStub errorStub = ((ViewStub) activity.findViewById(R.id.qbase_view_errorstub));
             if (errorStub != null) {
                 error = errorStub.inflate();
                 error.setVisibility(View.GONE);
             } else {
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_error_content);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_error_content);
                 if (mLlContent != null) {
                     mLlContent.setVisibility(View.GONE);
                     error = mLlContent;
@@ -374,12 +374,12 @@ public class UIManager {
     public View hideErrorView(@NonNull View view) {
         View error = null;
         if (view != null) {
-            ViewStub errorStub = ((ViewStub) view.findViewById(R.id.view_errorstub));
+            ViewStub errorStub = ((ViewStub) view.findViewById(R.id.qbase_view_errorstub));
             if (errorStub != null) {
                 error = errorStub.inflate();
                 error.setVisibility(View.GONE);
             } else {
-                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.view_error_content);
+                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.qbase_error_content);
                 if (mLlContent != null) {
                     mLlContent.setVisibility(View.GONE);
                     error = mLlContent;
@@ -435,16 +435,16 @@ public class UIManager {
     public View showLoadView(@NonNull Activity activity, String msg, View.OnClickListener listener) {
         View load = null;
         if (activity != null) {
-            ViewStub loadStub = ((ViewStub) activity.findViewById(R.id.view_loadstub));
+            ViewStub loadStub = ((ViewStub) activity.findViewById(R.id.qbase_view_loadstub));
             if (loadStub != null) {
                 load = loadStub.inflate();
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_load_content);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_load_content);
                 mLlContent.setOnClickListener(listener);
-                TextView textView = (TextView) activity.findViewById(R.id.view_load_text);
+                TextView textView = (TextView) activity.findViewById(R.id.qbase_load_text);
                 textView.setText(msg);
             } else {
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_load_content);
-                TextView textView = (TextView) activity.findViewById(R.id.view_load_text);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_load_content);
+                TextView textView = (TextView) activity.findViewById(R.id.qbase_load_text);
                 textView.setText(msg);
                 if (mLlContent != null) {
                     mLlContent.setVisibility(View.VISIBLE);
@@ -500,16 +500,16 @@ public class UIManager {
     public View showLoadView(@NonNull View view, String msg, View.OnClickListener listener) {
         View load = null;
         if (view != null) {
-            ViewStub loadStub = ((ViewStub) view.findViewById(R.id.view_loadstub));
+            ViewStub loadStub = ((ViewStub) view.findViewById(R.id.qbase_view_loadstub));
             if (loadStub != null) {
                 load = loadStub.inflate();
-                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.view_load_content);
+                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.qbase_load_content);
                 mLlContent.setOnClickListener(listener);
-                TextView textView = (TextView) view.findViewById(R.id.view_load_text);
+                TextView textView = (TextView) view.findViewById(R.id.qbase_load_text);
                 textView.setText(msg);
             } else {
-                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.view_load_content);
-                TextView textView = (TextView) view.findViewById(R.id.view_load_text);
+                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.qbase_load_content);
+                TextView textView = (TextView) view.findViewById(R.id.qbase_load_text);
                 textView.setText(msg);
                 if (mLlContent != null) {
                     mLlContent.setVisibility(View.VISIBLE);
@@ -529,12 +529,12 @@ public class UIManager {
     public View hideLoadView(@NonNull Activity activity) {
         View load = null;
         if (activity != null) {
-            ViewStub loadStub = ((ViewStub) activity.findViewById(R.id.view_loadstub));
+            ViewStub loadStub = ((ViewStub) activity.findViewById(R.id.qbase_view_loadstub));
             if (loadStub != null) {
                 load = loadStub.inflate();
                 load.setVisibility(View.GONE);
             } else {
-                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.view_load_content);
+                LinearLayout mLlContent = (LinearLayout) activity.findViewById(R.id.qbase_load_content);
                 if (mLlContent != null) {
                     mLlContent.setVisibility(View.GONE);
                     load = mLlContent;
@@ -553,12 +553,12 @@ public class UIManager {
     public View hideLoadView(@NonNull View view) {
         View load = null;
         if (view != null) {
-            ViewStub loadStub = ((ViewStub) view.findViewById(R.id.view_loadstub));
+            ViewStub loadStub = ((ViewStub) view.findViewById(R.id.qbase_view_loadstub));
             if (loadStub != null) {
                 load = loadStub.inflate();
                 load.setVisibility(View.GONE);
             } else {
-                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.view_load_content);
+                LinearLayout mLlContent = (LinearLayout) view.findViewById(R.id.qbase_load_content);
                 if (mLlContent != null) {
                     mLlContent.setVisibility(View.GONE);
                     load = mLlContent;

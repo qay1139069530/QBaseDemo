@@ -30,4 +30,65 @@
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_padding">0dp</dimen>
 
+
+
+    <!-- margin attribute -->
+    <dimen name="margin_one_px">1px</dimen>
+    <dimen name="margin_two_px">2px</dimen>
+    <dimen name="margin_one_dp">1dp</dimen>
+    <dimen name="margin_onehalf_dp">1.5dp</dimen>
+    <dimen name="margin_two_dp">2dp</dimen>
+    <dimen name="margin_three_dp">3dp</dimen>
+    <dimen name="margin_five_dp">5dp</dimen>
+    <dimen name="margin_six_dp">6dp</dimen>
+    <dimen name="margin_eight_dp">8dp</dimen>
+    <dimen name="margin_ten_dp">10dp</dimen>
+    <dimen name="margin_fifteen_dp">15dp</dimen>
+    <dimen name="margin_twenty_dp">20dp</dimen>
+    <dimen name="margin_twenty_five_dp">25dp</dimen>
+    <dimen name="margin_thirty_dp">30dp</dimen>
+    <dimen name="margin_forty_dp">40dp</dimen>
+    <dimen name="margin_forty_two_dp">42dp</dimen>
+    <dimen name="margin_fifty_dp">50dp</dimen>
+    <dimen name="margin_eighty_dp">80dp</dimen>
+    <dimen name="circle_width">12dp</dimen>
+
+    <!-- padding attribute -->
+    <dimen name="padding_one_px">1px</dimen>
+    <dimen name="padding_one_dp">1dp</dimen>
+    <dimen name="padding_two_dp">2dp</dimen>
+    <dimen name="padding_three_dp">3dp</dimen>
+    <dimen name="padding_five_dp">5dp</dimen>
+    <dimen name="padding_six_dp">6dp</dimen>
+    <dimen name="padding_eight_dp">8dp</dimen>
+    <dimen name="padding_ten_dp">10dp</dimen>
+    <dimen name="padding_thirteen_dp">13dp</dimen>
+    <dimen name="padding_fifteen_dp">15dp</dimen>
+    <dimen name="padding_eighteen_dp">18dp</dimen>
+    <dimen name="padding_twenty_dp">20dp</dimen>
+    <dimen name="padding_twenty_five_dp">25dp</dimen>
+    <dimen name="padding_thirty_dp">30dp</dimen>
+    <dimen name="padding_thirtyfive_dp">35dp</dimen>
+    <dimen name="padding_fifty_dp">50dp</dimen>
+    <dimen name="padding_forty_dp">40dp</dimen>
+    <dimen name="padding_eighty_dp">80dp</dimen>
+
+
+    <!-- Text Size attribute -->
+    <dimen name="text_eight_sp">8sp</dimen>
+    <dimen name="text_ten_sp">10sp</dimen>
+    <dimen name="text_eleven_sp">11sp</dimen>
+    <dimen name="text_twelve_sp">12sp</dimen>
+    <dimen name="text_thirteen_sp">13sp</dimen>
+    <dimen name="text_fourteen_sp">14sp</dimen>
+    <dimen name="text_fifteen_sp">15sp</dimen>
+    <dimen name="text_sixteen_sp">16sp</dimen>
+    <dimen name="text_eighteen_sp">18sp</dimen>
+    <dimen name="text_twenty_sp">20sp</dimen>
+    <dimen name="text_twenty_one_sp">21sp</dimen>
+    <dimen name="text_twenty_four_sp">24sp</dimen>
+    <dimen name="text_thrity_sp">30sp</dimen>
+    <dimen name="text_fifty_sp">50sp</dimen>
+
+    <dimen name="text_title_sp">18sp</dimen>
 </resources>

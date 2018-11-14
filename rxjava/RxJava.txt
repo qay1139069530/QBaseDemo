@@ -1,0 +1,27 @@
+给 Android 开发者的 RxJava 详解
+https://gank.io/post/560e15be2dca930e00da1083
+
+
+
+RxJava文档：
+https://github.com/ReactiveX/RxJava/wiki
+RxJava中文文档：
+https://mcxiaoke.gitbooks.io/rxdocs/content
+RxJava经典资料：
+https://github.com/lzyzsd/Awesome-RxJava
+经典的水管模型，对RxJava进行了生动的讲解，通俗易懂，推荐Season_zlc学习翻阅
+
+
+Android 高级开发——响应式编程框架 RxJava2 解析
+https://www.cnblogs.com/smartbetter/p/7723773.html
+
+
+
+备注：
+flatmap：不属于加工范围，仅仅是对被观察者的对象进行一些特殊的指定操作，可能由一个变成多个，
+返回的都是ObservableSource，可以和just看成是一个级别的，对被观察者的范围造成影响。
+
+map：属于加工范围，会回调onNext，返回的是加工后的具体对象，而不是ObservableSource。
+虽然名字很像，但是实际他俩并没有什么卵关系。
+
+

@@ -169,9 +169,9 @@ public class StatusBarCompat {
     public static void setImageTranslucent(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            activity.getWindow().setStatusBarColor(ContextCompat.getColor(activity, R.color.alpha_all));
+            activity.getWindow().setStatusBarColor(ContextCompat.getColor(activity, R.color.qbase_alpha_all));
         } else {
-            setKKStatusBar(activity, R.color.alpha_all);
+            setKKStatusBar(activity, R.color.qbase_alpha_all);
         }
     }
 
@@ -197,7 +197,7 @@ public class StatusBarCompat {
             ViewGroup contentLayout = (ViewGroup) activity.findViewById(android.R.id.content);
             contentLayout.getChildAt(0).setFitsSystemWindows(false);
             coordinatorLayout.setFitsSystemWindows(true);
-            setKKStatusBar(activity, R.color.alpha_all);
+            setKKStatusBar(activity, R.color.qbase_alpha_all);
         }
     }
 

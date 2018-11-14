@@ -14,7 +14,7 @@
     </item>
     <item>
         <shape>
-            <gradient android:angle="270" android:endColor="@color/white" android:startColor="@color/white" />
+            <gradient android:angle="270" android:endColor="@color/qbase_white" android:startColor="@color/qbase_white" />
             <corners android:radius="@dimen/card_radius" />
         </shape>
     </item>
