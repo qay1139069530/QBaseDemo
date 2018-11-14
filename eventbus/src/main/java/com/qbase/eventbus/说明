@@ -1,0 +1,111 @@
+
+getDefault() 参数说明
+eventTypesCache ：保存事件类型的缓存，HashMap
+
+subscriptionsByEventType：事件类型与订阅者列表的映射，HashMap
+
+typesBySubscriber：订阅的类与订阅的事件关联列表，HashMap
+stickyEvents：粘性事件，ConcurrentHashMap
+currentPostingThreadState：当前发送线程的状态，ThreadLocal
+mainThreadPoster：主线程的消息发送者，Handler
+backgroundPoster：子线程的消息发送者，Runnable
+asyncPoster：异步消息发送者，Runnable
+subscriberMethodFinder：订阅方法查找
+executorService：线程池
+
+//  事件与对应的订阅者关联列表，
+private final Map<Class<?>, CopyOnWriteArrayList<Subscription>> subscriptionsByEventType;
+//  订阅者与订阅的事件关联列表
+private final Map<Object, List<Class<?>>> typesBySubscriber;
+
+
+ThreadMode.POSTING 订阅者方法将在发布事件所在的线程中被调用。这是 默认的线程模式。事件的传递是同步的，一旦发布事件，所有该模式的订阅者方法都将被调用。
+这种线程模式意味着最少的性能开销，因为它避免了线程的切换。因此，对于不要求是主线程并且耗时很短的简单任务推荐使用该模式。使用该模式的订阅者方法应该快速返回，
+以避免阻塞发布事件的线程，这可能是主线程。
+
+ThreadMode.MAIN 订阅者方法将在主线程（UI线程）中被调用。因此，可以在该模式的订阅者方法中直接更新UI界面。如果发布事件的线程是主线程，
+那么该模式的订阅者方法将被直接调用。使用该模式的订阅者方法必须快速返回，以避免阻塞主线程。
+
+
+ThreadMode.MAIN_ORDERED 订阅者方法将在主线程（UI线程）中被调用。因此，可以在该模式的订阅者方法中直接更新UI界面。事件将先进入队列然后才发送给订阅者，
+所以发布事件的调用将立即返回。这使得事件的处理保持严格的串行顺序。使用该模式的订阅者方法必须快速返回，以避免阻塞主线程。
+
+
+ThreadMode.BACKGROUND 订阅者方法将在后台线程中被调用。如果发布事件的线程不是主线程，那么订阅者方法将直接在该线程中被调用。
+如果发布事件的线程是主线程，那么将使用一个单独的后台线程，该线程将按顺序发送所有的事件。使用该模式的订阅者方法应该快速返回，以避免阻塞后台线程。
+
+
+ThreadMode.ASYNC 订阅者方法将在一个单独的线程中被调用。因此，发布事件的调用将立即返回。如果订阅者方法的执行需要一些时间，
+例如网络访问，那么就应该使用该模式。避免触发大量的长时间运行的订阅者方法，以限制并发线程的数量。EventBus使用了一个线程池来有效地重用已经完成调用订阅者方法的线程。
+
+
+
+// 创建默认的EventBus对象，相当于EventBus.getDefault()。
+EventBus installDefaultEventBus()：
+
+// 添加由EventBus“注释预处理器生成的索引
+EventBuilder addIndex(SubscriberInfoIndex index)：
+
+// 默认情况下，EventBus认为事件类有层次结构（订户超类将被通知）
+EventBuilder eventInheritance(boolean eventInheritance)：
+
+// 定义一个线程池用于处理后台线程和异步线程分发事件
+EventBuilder executorService(java.util.concurrent.ExecutorService executorService)：
+
+// 设置忽略订阅索引，即使事件已被设置索引，默认为false
+EventBuilder ignoreGeneratedIndex(boolean ignoreGeneratedIndex)：
+
+// 打印没有订阅消息，默认为true
+EventBuilder logNoSubscriberMessages(boolean logNoSubscriberMessages)：
+
+// 打印订阅异常，默认true
+EventBuilder logSubscriberExceptions(boolean logSubscriberExceptions)：
+
+// 设置发送的的事件在没有订阅者的情况时，EventBus是否保持静默，默认true
+EventBuilder sendNoSubscriberEvent(boolean sendNoSubscriberEvent)：
+
+// 发送分发事件的异常，默认true
+EventBuilder sendSubscriberExceptionEvent(boolean sendSubscriberExceptionEvent)：
+
+// 在3.0以前，接收处理事件的方法名以onEvent开头，方法名称验证避免不是以此开头，启用严格的方法验证（默认：false）
+EventBuilder strictMethodVerification(java.lang.Class<?> clazz)
+
+// 如果onEvent***方法出现异常，是否将此异常分发给订阅者（默认：false）
+EventBuilder throwSubscriberException(boolean throwSubscriberException)
+
+
+
+值得学习的细节
+即使整体思想（事件注册、收集、发送、解除注册）有了，分成不同的模块.
+
+来看看 EventBus 有什么值得学习的细节：
+
+提供默认 Builder 和默认实例
+选用合适的线程池
+    Executors.newCachedThreadPool() 适合并发执行大量短期的小任务
+使用 ThreadLocal 实现事件队列的线程无关性
+并发控制
+    数据有可能在操作的同时添加，使用 CopyOnWriteArrayList 与 synchronized
+职责分离
+    查找类中的订阅方法有专门的类 SubscriberMethodFinder
+    保存类与其中的订阅方法关系有专门的类 Subscription
+    不同线程发送事件也有专门的类
+使用 map 缓存一些可能会重复使用的信息
+    事件与其的父类和接口的映射 Map<Class<?>, List<Class<?>>> eventTypesCache = new HashMap<>()
+    事件与对应的订阅者关联列表 Map<Class<?>, CopyOnWriteArrayList<Subscription>> subscriptionsByEventType
+    订阅者与订阅的事件关联列表 Map<Object, List<Class<?>>> typesBySubscriber
+    保存粘性事件 Map<Class<?>, Object> stickyEvents
+如果需要创建大量相同类型的对象，考虑使用对象池，对象使用完毕回收，只要把引用其他对象置为 null 即可
+    FindState[] FIND_STATE_POOL = new FindState[POOL_SIZE]
+    List<PendingPost> pendingPostPool = new ArrayList<PendingPost>()
+将重复传递的一些参数封到一个对象里传递
+    PostingThreadState
+创建了自己的事件队列 PendingPostQueue
+    双向链表
+    生产者-消费者模型, 出队 wait - 入队 nofityAll
+
+
+
+EventBus 源码中设计的知识点，比如线程池、阻塞队列、编译时注解。
+
+

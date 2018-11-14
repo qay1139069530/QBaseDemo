@@ -1,1 +1,1 @@
-include ':app', ':okhttp', ':rxjava', ':auxilibrary', ':test'
+include ':app', ':okhttp', ':rxjava', ':auxilibrary', ':test', ':eventbus'

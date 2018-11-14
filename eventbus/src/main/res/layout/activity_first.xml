@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FirstActivity">
+
+
+    <Button
+        android:id="@+id/posting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="posting" />
+    <Button
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="main" />
+
+    <Button
+        android:id="@+id/stick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stick" />
+
+    <Button
+        android:id="@+id/async"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="async" />
+
+    <Button
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="background" />
+
+    <Button
+        android:id="@+id/other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="other" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="第一个activity" />
+
+</LinearLayout>

@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/auxilibrary" />
+            <option value="$PROJECT_DIR$/eventbus" />
             <option value="$PROJECT_DIR$/okhttp" />
             <option value="$PROJECT_DIR$/rxjava" />
             <option value="$PROJECT_DIR$/test" />
